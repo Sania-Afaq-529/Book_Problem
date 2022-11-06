@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class Author extends Book
+{
+	String Name,email,gender;
+	Author()
+	{
+		Name=email=gender="";
+	}
+	
+	Author(String aname,String em,String g)
+	{
+		Name=aname;
+		email=em;
+		gender=g;
+	}
+	
+	String getname()
+	{
+		String s=Name;
+		return s;
+	}
+	void check()
+	{
+		System.out.println("Just checking");
+	}
+	String get()
+	{
+		return "Email: " + email +"Gender: "+ gender;
+	}
+}
