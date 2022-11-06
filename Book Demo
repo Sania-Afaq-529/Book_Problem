@@ -1,0 +1,91 @@
+import java.util.Scanner;
+
+public class Book_Demo 
+{
+
+	public static void main(String[] args) 
+	{
+		int choice;
+		Scanner sc=new Scanner(System.in);
+		Author a1[]= {new Author("Herbert Schildt","abc12@gmail.com","Male")};
+		Author a2[]= {new Author("Andrew S. Tanenbaum","a323f@gmail.com","Male"),new Author("David J. Wetherall","hgfg@gmail.com","Male")};
+		Author a3[]= {new Author("David A Patterson ","abc12@gmail.com","Male"),new Author("John L. Hennessy","sania@gmail.com","Male")};
+		Author a4[]= {new Author("James Martin","a323f@gmail.com","Male")};
+		Author a5[]= {new Author("Michael Duck ","abc12@gmail.com","Male"),new Author("Richard Read","sania@gmail.com","Male")};
+		Author a6[]= {new Author("Brahma Dathan ","a323f@gmail.com","Male"),new Author("Sarnath Ramnath","hgfg@gmail.com","Male")};
+		Author a7[]= {new Author("Harvey Deital","harveyf@gmail.com","Male"),new Author("Paul Deitel","hgfg@gmail.com","Male")};
+		Author a8[]= {new Author("Kevin Jackson ","a323f@gmail.com","Male"),new Author("Scott Goessling","hgfg@gmail.com","Male")};
+		//Authors may be less than books because same authors may have written many books
+		
+		Book b[]=new Book[10];
+		b[0]=new Soft_Book("Java, The Complete Reference","1001a",a1,"pdf","cdfbgtjutgf.frgt");
+		b[1]=new Hard_Book("Computer Networks","9780133485936",a2,12,3,true);
+		b[2]=new Soft_Book("Computer Architecture: A Quantitative Approach","012383872X",a3,"pdf","/Computer-Architecture-Quantitative-John-Hennessy/dp/012383872X");
+		b[3]=new Soft_Book("Object Oriented Analysis an design","1451a",a4,"pdf","cdfbgtjutgf.frgt");
+		b[4]=new Hard_Book("Data Communications and Computer Networks ","14887",a5,12,3,true);
+		b[5]=new Hard_Book("Object Oriented Analysis and Design" ,"13887b",a6,12,3,true);
+		b[6]=new Soft_Book("Java, How to Program","301a",a7,"pdf","cdfbgtjutgf.frgt");
+		b[7]=new Hard_Book("Architecting Cloud Computing Solutions","90887a",a8,12,3,true);
+		b[8]=new Soft_Book("Java2,The Complete Reference","565ff",a1,"pdf","cdfbgtjutgf.frgt");
+		b[9]=new Soft_Book("Java2, How to Program","213rf",a7,"pdf","cdfbgtjutgf.frgt");
+		do
+		{
+			System.out.println("Enter 1 if You want to search by book name\nEnter 2 if You want to search by book ISBN\nEnter 3 if You want to search by Author name\nEnter4 to display data of all books");
+			choice=sc.nextInt();
+			if(choice==1)
+			{
+				System.out.println("Enter book name you want to search");
+				String s1=sc.nextLine();
+				s1=sc.nextLine();
+				for(int i=0;i<b.length;i++)
+				{
+					b[i].searchByBookName(s1);
+					
+				}
+			}
+			if(choice==2)
+			{
+				System.out.println("Enter ISBN you want to search");
+				String s1=sc.nextLine();
+				s1=sc.nextLine();
+
+				for(int i=0;i<b.length;i++)
+				{
+					b[i].searchByISBN(s1);
+
+				}
+			}
+			if(choice==3)
+			{
+				System.out.println("Enter Author name you want to search");
+				String s1=sc.nextLine();
+				s1=sc.nextLine();
+
+				for(int i=0;i<b.length;i++)
+				{
+					b[i].searchByAuthor(s1);
+
+				}
+			}
+			if(choice==4)
+			{
+				String s=b[0].get();
+				for(int i=1;i<10;i++)
+				{
+					s=s+b[i].get();
+				}
+				System.out.println( s);
+			}
+			else
+			{
+				System.out.println("Invalid choice");
+			}
+			
+		}while(choice!=0);
+		if(choice==0)
+		{
+			System.out.println("Program is terminated");
+		}
+	}
+
+}
