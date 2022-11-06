@@ -1,0 +1,126 @@
+import java.util.*;
+public class Book 
+{
+	String Name,ISBN;
+	Author a[];
+	Book()
+	{
+		Name = ISBN="unknown";
+	}
+	Book(String n,String isbn,Author a1[])
+	{
+		Name=n;
+		ISBN=isbn;
+		a= new Author[a1.length];
+		a[0]=new Author();
+		a=a1;
+	}
+	String getname()
+	{
+		String s=Name ;
+		return s;
+	}
+	String getisbn()
+	{
+		String s= ISBN ;
+		return s;
+	}
+	String getauthor()
+	{
+		String s=a[0].getname();
+
+		
+		for(int i=1;i<a.length;i++)
+		{
+			s=s + ", "+ a[i].getname();
+			
+		}
+		
+		return s;
+	}
+	String getauthordetails()
+	{
+		String s="";
+		for(int i=0;i<a.length;i++)
+		{
+			s=s+a[i].getname()+a[i].get();
+		}
+		return s;
+	}
+	String get ()
+	{
+		String s = "Book name: " +getname()+ " ,  ISBN: "+ getisbn()+" ,  Written by: "+ getauthor();
+		return s;
+	}
+	void searchByAuthor(String aut)
+	{
+		if(getauthor().contains(aut))
+		{
+			System.out.println("Book Name: " + getname() + "  ISBN:  "+getisbn()+"  Authors:  "+ getauthor()+"\n");
+			
+		}
+		else 
+		{
+			String s=getauthor();
+			 if(s.toUpperCase().contains(aut))
+			 {
+					System.out.print("Book Name: " + getname() + "  ISBN:  "+getisbn()+"  Authors:  "+ getauthor()+"\n");
+
+			 }
+			 else if(s.toLowerCase().contains(aut))
+			 {
+					System.out.print("Book Name: " + getname() + "  ISBN:  "+getisbn()+"  Authors:  "+ getauthor()+"\n");
+
+			 }
+		}
+	}
+	
+	void searchByBookName(String b)
+	{
+		if(getname().contains(b))
+		{
+			System.out.print("Book Name: " + getname() + "  ISBN:  "+getisbn()+"  Authors:  "+ getauthor()+"\n");
+
+		}
+		else 
+		{
+			String s=getname();
+			 if(s.toUpperCase().contains(b))
+			 {
+					System.out.print("Book Name: " + getname() + "  ISBN:  "+getisbn()+"  Authors:  "+ getauthor()+"\n");
+
+			 }
+			 else if(s.toLowerCase().contains(b))
+			 {
+					System.out.print("Book Name: " + getname() + "  ISBN:  "+getisbn()+"  Authors:  "+ getauthor()+"\n");
+
+			 }
+		}
+		
+	}
+	
+	void searchByISBN(String bn)
+	{
+		if(getisbn().contains(bn))
+		{
+	 		System.out.print("Book Name: " + getname() + "  ISBN:  "+getisbn()+"  Authors:  "+ getauthor());
+
+		}
+		else 
+		{
+			String s=getisbn();
+			 if(s.toUpperCase().contains(bn))
+			 {
+					System.out.print("Book Name: " + getname() + "  ISBN:  "+getisbn()+"  Authors:  "+ getauthor()+"\n");
+
+			 }
+			 else if(s.toLowerCase().contains(bn))
+			 {
+					System.out.print("Book Name: " + getname() + "  ISBN:  "+getisbn()+"  Authors:  "+ getauthor()+"\n");
+
+			 }
+		}
+	}
+	
+	
+}
