@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class Soft_Book extends Book
+{
+	String file_type,link;
+	Soft_Book()
+	{
+		super();
+		file_type=link="unknown";
+	}
+	Soft_Book(String n,String isbn,Author a1[],String ft,String l)
+	{
+		super(n,isbn,a1);
+		file_type=ft;
+		link=l;
+	}
+	String get()
+	{
+		String s=super.get()+ " ,  File type: "+getFile_type()+" , Link: "+ getLink()+"\n";
+		return s;
+	}
+	String getFile_type()
+	{
+		return file_type;
+	}
+	String getLink()
+	{
+		return link;
+	}
+}
