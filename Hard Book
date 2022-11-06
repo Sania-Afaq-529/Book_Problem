@@ -1,0 +1,34 @@
+import java.util.*;
+
+public class Hard_Book extends Book 
+{
+	int room_no, shelf_no;
+	Boolean available;
+	Hard_Book()
+	{
+		room_no=shelf_no=0;
+		available=false;
+	}
+	Hard_Book(String n,String isbn,Author a1[],int rn,int sn,Boolean av)
+	{
+		super(n,isbn,a1);
+		room_no=rn;
+		shelf_no=sn;
+		available=av;
+	}
+	int get_roomno()
+	{
+
+		return room_no;
+	}
+	int get_shelfno()
+	{
+		return shelf_no;
+	}
+	String get()
+	{
+		String s=super.get()+ " , Room no: "+get_roomno()+" , Shelf no: "+ get_shelfno()+"\n";
+		return s;
+	}
+
+}
